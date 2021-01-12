@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{ resources }}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Price Chart</title>
+</head>
+
+<body>
+    <header class="header_class">
+        <div class="row">
+            <div class="column3">
+                <p><a href="http://suatakbulut.com/" target="_blank">Go to My Webpage</a></p>
+            </div>
+            <div class="column3">
+                <p><a href=home>Home</a></p>
+            </div>
+            <div class="column3">
+                <p><a href="https://github.com/suatakbulut/dataincubator-flask-heroku" target="_blank">Github Code</a></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <!-- 
+    Bootstrap core CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    -->
+    </head>
+
+    <body>
+        <div class="plot_container">
+            <div id="myplot"></div>
+            <script>
+                fetch('/plot')
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(item) {
+                        return Bokeh.embed.embed_item(item);
+                    })
+            </script>
+        </div>
+
+
+        <div class="plot_container"></div>
+
+        <div class="row">
+            <div class="column5">
+                <p><a href="/about">About</a> </p>
+            </div>
+            <div class="column5">
+                <p><a target="_blank" href="https://www.heroku.com/">Heroku</a> </p>
+            </div>
+            <div class="column5">
+                <p><a target="_blank" href="http://flask.pocoo.org/">Flask</a> </p>
+            </div>
+            <div class="column5">
+                <p><a target="_blank" href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a> </p>
+            </div>
+            <div class="column5">
+                <p><a target="_blank" href="http://getbootstrap.com/">Bootstrap</a> </p>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
